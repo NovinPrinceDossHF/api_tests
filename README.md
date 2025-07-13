@@ -5,3 +5,4 @@
 |Cat_Facts_001| test_get_single_fact_success| assert_is_json(response) | Content Type / Response Format | Ensures that the response body is valid JSON |
 |Cat_Facts_001| test_get_single_fact_success| assert isinstance(data, dict) | JSON Structure / Data Type |  APIs often return a JSON object (which maps to a Python dictionary) as their top-level structure for single entities. This confirms the expected overall structure |
 |Cat_Facts_001| test_get_single_fact_success| assert expected_key in data | Content / Key Presence | This is a parameterized test that runs twice:It asserts that the fact key and length is present in the JSON response |
+|Cat_Facts_002| test_get_single_fact_success| assert "fact" in data, assert "length" in data | Content / Key Presence | Ensures the presence of these critical fields before attempting to check their data types, preventing KeyError if they were missing |
